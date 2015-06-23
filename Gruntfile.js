@@ -22,6 +22,10 @@ module.exports = function (grunt) {
         files: {
           'public/css/style.css': 'public/css/style.less'
         }
+      },
+      options: {
+        plugins: new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
+        compress: true
       }
     },
     watch: {

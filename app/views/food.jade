@@ -1,0 +1,17 @@
+figure
+  .img-wrap
+    img(src="img/" + food.id + ".jpg")
+  figcaption=food.title
+  p=food.description
+  div.remain= "剩余" + food.remainNumer + "份 剩余" + food.remainDays + "天"
+  .price-wrap
+    span.price=food.price + "元"
+    case food.people
+      when 1
+        span="/位"
+      default
+        span="/" + food.people + "位"
+
+
+
+

@@ -9,3 +9,11 @@ block content
       #banner-button-wrap
         a(href='https://itunes.apple.com/us/app/enjoy/id943837902?ls=1&mt=8') iOS 版
         a(href='http://install.ricebook.com/download/enjoy.apk') Android 版
+  .container
+    #label
+      ul
+        each val in ['全部','和食季·餐','下午茶','晚餐','夜生活','活动','Brunch','热卖','午餐','和食季·物']
+          li= val
+    for food in foods
+      include food
+    #more 查看更多礼遇

@@ -7,7 +7,10 @@
 
 @total-width: 100%;
 
-//全局样式
+////////////
+//全局样式//
+////////////
+
 body {
   margin: 0;
   padding: 0;
@@ -28,7 +31,9 @@ ul{
   transform: translate(-50%,-50%);
 }
 
-
+//////////
+//Header//
+//////////
 
 header{
   height: 90px;
@@ -59,9 +64,35 @@ header{
   line-height: 90px;
 
   #chosen-city-icon{
-    transition: all .5s;
+    transition: all .3s;
   }
 }
+#city-list{
+  display: none;
+  opacity: 0;
+  cursor: pointer;
+  position:absolute;
+  transition: all .3s;
+  top:0;
+  left: 187px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  ul{
+    padding: 0;
+    margin: 0;
+    li{
+      width: 160px;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
+}
+
+///////////
+//Banner//
+/////////
 
 #banner{
   height: 400px;
@@ -94,9 +125,87 @@ header{
     }
   }
 }
+.container{
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: hidden;
+}
+////////////
+//主要内容//
+///////////
+#label{
+  ul{
+    cursor: pointer;
+    text-align: center;
+    margin: 50px;
+    font-weight: 500;
+    color: #92969c;
+    li{
+      display: inline;
+      padding: 10px;
+    }
+    .chosen{
+      color: #000;
+      border-bottom: solid #000 4px;
+    }
+  }
+}
+figure{
+  .column(4);
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #92969c;
+  figcaption{
+    margin-top: 22px;
+    color: #000011;
+    font-size: 16px;
+    transition: color .3s;
+    &:hover{
+      color: #777777;
+    }
+  }
+  .img-wrap{
+    overflow: hidden;
+    width: 300px;
+    height: 225px;
+  }
+  img{
+    transition: all .3s;
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+  .remain{
+    float: left;
+  }
+  .price-wrap{
+    float: right;
+    color: #e85628;
+  }
+  .price{
+    font-size: 16px;
+  }
+}
+#more{
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  width: 99%;
+  margin:0 0 20px 0;
+  height: 40px;
+  line-height: 40px;
+  color: #e85628;
+  border:solid 1px #e85628;
+}
 
+//////////
+//Footer//
+//////////
 
 footer{
+  overflow: hidden;
   font-size: 14px;
   padding: 30px 30px 0 30px;
   background: #27292b;
@@ -120,4 +229,54 @@ footer{
 #download{
   text-align: center;
   .column(3)
+}
+#enjoy-down{
+  display: none;
+  width: 100%;
+  height: 90px;
+  line-height: 90px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  p{
+    position: fixed;
+    left: 90px;
+    bottom: -15px;
+  }
+  img{
+    margin: 15px;
+  }
+}
+
+
+@media screen and (max-width: 960px) {
+  nav,#banner{
+    display: none;
+  }
+  #enjoy-down{
+    display: block;
+  }
+  figure,#contact,#icp,#download {
+    .column(12);
+  }
+  figure{
+    .img-wrap{
+      width: 100%;
+      height: 100%;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  #logo{
+    float: none;
+    margin: 10px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  #chosen-city{
+    margin-left: 20px;
+  }
 }

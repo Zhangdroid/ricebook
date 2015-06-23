@@ -1,7 +1,8 @@
 header
   a(href='/')
-    img(src='img/home_enjoy_icon1.png')
-  a(href='#',id='chosen-city') 北京
+    img#logo(src='img/home_enjoy_icon1.png')
+  a(href='#',id='chosen-city')
+    span(id='chosen-city-text') 北京
     span(class='icon-angle-down',id='chosen-city-icon')
   nav
     ul
@@ -11,3 +12,8 @@ header
         a(href='/') 下载应用
       li
         a(href='/') 登录/注册
+  #city-list
+    ul
+      li 北京
+      li 上海
+      li 成都
